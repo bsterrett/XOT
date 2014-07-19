@@ -1,0 +1,4 @@
+json.array!(@reminders) do |reminder|
+  json.extract! reminder, :id, :user_id, :title, :text_content, :recurring, :trigger_at
+  json.url reminder_url(reminder, format: :json)
+end

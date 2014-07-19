@@ -1,0 +1,37 @@
+<%= form_for(@reminder) do |f| %>
+  <% if @reminder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reminder.errors.count, "error") %> prohibited this reminder from being saved:</h2>
+
+      <ul>
+      <% @reminder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :text_content %><br>
+    <%= f.text_field :text_content %>
+  </div>
+  <div class="field">
+    <%= f.label :recurring %><br>
+    <%= f.check_box :recurring %>
+  </div>
+  <div class="field">
+    <%= f.label :trigger_at %><br>
+    <%= f.datetime_select :trigger_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

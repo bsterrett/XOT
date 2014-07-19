@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  reminder_id: 1
+  text_content: MyString
+  dispatched: false
+  trigger_at: 2014-07-06 21:42:52
+
+two:
+  user_id: 1
+  reminder_id: 1
+  text_content: MyString
+  dispatched: false
+  trigger_at: 2014-07-06 21:42:52
