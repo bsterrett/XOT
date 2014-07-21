@@ -70,8 +70,12 @@ describe "Static pages" do
   describe "Home page" do
     before { visit home_path }
 
-    it { is_expected.to have_content("Why are you") }
+    it { is_expected.to have_content("Exotemporalis") }
     it { is_expected.to have_title("Home | Exotemporalis") }
+    it { is_expected.to have_link("Users") }
+    it { is_expected.to have_link("Reminders") }
+    it { is_expected.to have_link("Notifications") }
+    it { is_expected.to have_link("Sign up") }
   end
 
   describe "Help page" do

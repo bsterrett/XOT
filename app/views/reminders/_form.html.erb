@@ -11,27 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <%= f.number_field :user_id, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :text %><br>
-    <%= f.text_field :text %>
+    <%= f.text_field :text, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :recurring %><br>
-    <%= f.check_box :recurring %>
+  <div class="checkbox">
+    <%= f.label :recurring do %>
+      <%= f.check_box :recurring %>
+      Recurring
+    <% end %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :trigger_at %><br>
-    <%= f.datetime_select :trigger_at %>
+    <%= f.datetime_select :trigger_at, class: "form-control" %>
   </div>
   <div class="actions">
+    <%= link_to 'Back', :back, class: "btn btn-default" %>
     <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
