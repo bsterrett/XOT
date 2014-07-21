@@ -25,3 +25,7 @@ doc/
 .DS_Store
 .idea
 .secret
+
+# Personal stuff
+db/lists.yml
+db/reminders.yml

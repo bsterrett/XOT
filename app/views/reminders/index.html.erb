@@ -1,33 +1,32 @@
-<h1>Listing reminders</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Title</th>
-      <th>Text content</th>
-      <th>Recurring</th>
-      <th>Trigger at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @reminders.each do |reminder| %>
+<div>
+  <h1>Listing reminders</h1>
+  <br>
+  <table class="table table-hover table-condensed table-responsive">
+    <thead>
       <tr>
-        <td><%= reminder.user_id %></td>
-        <td><%= reminder.title %></td>
-        <td><%= reminder.text_content %></td>
-        <td><%= reminder.recurring %></td>
-        <td><%= reminder.trigger_at %></td>
-        <td><%= link_to 'Show', reminder %></td>
-        <td><%= link_to 'Edit', edit_reminder_path(reminder) %></td>
-        <td><%= link_to 'Destroy', reminder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>User</th>
+        <th>Title</th>
+        <th>Text content</th>
+        <th>Recurring</th>
+        <th>Trigger at</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Reminder', new_reminder_path %>
+    </thead>
+    <tbody>
+      <% @reminders.each do |reminder| %>
+        <tr>
+          <td><%= link_to "#{reminder.user.name}", user_path(reminder.user) %></td>
+          <td><%= reminder.title %></td>
+          <td><%= reminder.text %></td>
+          <td><%= reminder.recurring %></td>
+          <td><%= reminder.trigger_at %></td>
+          <td><%= link_to 'Show', reminder %></td>
+          <td><%= link_to 'Edit', edit_reminder_path(reminder) %></td>
+          <td><%= link_to 'Destroy', reminder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'New Reminder', new_reminder_path %>
+</div>

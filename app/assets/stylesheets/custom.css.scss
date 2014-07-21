@@ -1,13 +1,34 @@
 @import "bootstrap";
+@import "compass";
+
+
+/* sass variables */
+
+$primary-color-medium: #167041;
+$primary-color-light: #088A4B;
+$primary-color-dark: #165937;
+
+$secondary-color-medium: #E0F8E6;
+$secondary-color-light: #E0F8E6;
+$secondary-color-dark: #E0F8E6;
+
+$background-primary: #FFFFFF;
+$background-secondary: #EAF2EB;
+
+$border-width: 150px;
+$container-width: 800px;
+
+
 
 /* universal */
 
 html {
   overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  padding-top: 70px;
+  background: $background-secondary;
 }
 
 section {
@@ -18,10 +39,88 @@ textarea {
   resize: vertical;
 }
 
-.container {
-  width: 900px;
+a {
+  color: $primary-color-medium;
+  &:hover, &:visited {
+    color: $primary-color-dark;
+  }
 }
 
-.navbar-fixed-top {
-  background: #FFF;
+.header-spacer {
+  height: 45px;
+}
+
+.container {
+  width: $container-width;
+}
+
+.page-container {
+  width: $container-width + 2*$border-width;
+  margin: 0 auto;
+}
+
+.page-left-border, .page-right-border, .page-middle {
+  display: table-cell;
+}
+
+.page-left-border, .page-right-border {
+  width: $border-width;
+}
+
+
+
+/* fancy page borders */
+
+.page-container {
+  background: none;
+}
+
+.page-left-border {
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.page-right-border {
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.page-middle {
+  background: $background-primary;
+}
+
+nav > .container {
+  background: $background-primary;
+}
+
+
+
+/* bootstrap overrides */
+
+.container {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.navbar-nav {
+/* navbar equal spacing hack */
+  text-align: justify;
+  float: none;
+  line-height: 0;
+}
+
+.navbar-nav:after {
+/* navbar equal spacing hack */
+  content: '';
+  width: 100%;
+  display: inline-block;
+}
+
+.navbar-nav > li {
+/* navbar equal spacing hack */
+  float: none;
+  display: inline-block;
+}
+
+.navbar-nav > li > a {
+/* navbar equal spacing hack */
+  padding: 10px 30px;
 }

@@ -9,9 +9,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <%= render 'layouts/header' %>
-  <div class="container">
-    <%= yield %>
+  <div class="page-container">
+    <div class="page-left-border"></div>
+    <div class="page-middle">
+      <%= render 'layouts/header' %>
+      <div class="header-spacer"></div>
+      <div class="container">
+        <%= yield %>
+      </div>  
+    </div>
+    <div class="page-right-border"></div>  
   </div>
 </body>
 </html>

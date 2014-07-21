@@ -1,6 +1,7 @@
-<h1>Editing reminder</h1>
-
+<% provide(:title, 'Edit Reminder') %>
+<h1>Edit Reminder</h1>
+<br>
 <%= render 'form' %>
-
-<%= link_to 'Show', @reminder %> |
-<%= link_to 'Back', reminders_path %>
+<br>
+<%= link_to 'Back', reminders_path, class: "btn btn-default" %>
+<%= link_to 'Show', @reminder, class: "btn btn-default" %>

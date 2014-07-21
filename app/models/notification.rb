@@ -5,6 +5,10 @@ class Notification < ActiveRecord::Base
     return self.reminder.user
   end
 
+  def user_id
+    return self.user.id
+  end
+
   def dispatch
     unless self.dispatched
       NotificationMailer.notification_email(self).deliver

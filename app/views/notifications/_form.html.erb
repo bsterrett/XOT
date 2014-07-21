@@ -12,16 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
     <%= f.label :reminder_id %><br>
     <%= f.number_field :reminder_id %>
   </div>
   <div class="field">
-    <%= f.label :text_content %><br>
-    <%= f.text_field :text_content %>
+    <%= f.label :text %><br>
+    <%= f.text_field :text %>
   </div>
   <div class="field">
     <%= f.label :dispatched %><br>
@@ -32,6 +28,6 @@
     <%= f.datetime_select :trigger_at %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

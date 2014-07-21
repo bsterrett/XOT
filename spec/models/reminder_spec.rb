@@ -1,6 +1,19 @@
 require 'rails_helper'
 
 describe Reminder, :type => :model do
+  describe 'Hartl Guide Notification Tests' do
+    before { @reminder = create(:reminder) }
+
+    subject { @reminder }
+
+    it { is_expected.to respond_to(:user) }
+    it { is_expected.to respond_to(:notifications) }
+    it { is_expected.to respond_to(:title) }
+    it { is_expected.to respond_to(:text) }
+    it { is_expected.to respond_to(:trigger_at) }
+    it { is_expected.to respond_to(:recurring) }
+  end
+
   it 'can be created' do
     reminder = create(:reminder)
     expect(reminder).to be
