@@ -2,7 +2,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @notification.user %>
+  <%= @notification.user.name %>
 </p>
 
 <p>
@@ -25,5 +25,6 @@
   <%= @notification.trigger_at %>
 </p>
 
-<%= link_to 'Edit', edit_notification_path(@notification) %> |
-<%= link_to 'Back', notifications_path %>
+<%= link_to 'Back', :back, class: 'btn btn-default' %>
+<%= link_to 'Edit', edit_notification_path(@notification), class: 'btn btn-primary' %>
+

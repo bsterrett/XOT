@@ -32,7 +32,6 @@ $container-width: 800px;
 
 html {
   overflow-y: scroll;
-  -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -45,6 +44,10 @@ section {
 
 textarea {
   resize: vertical;
+}
+
+html, input, textarea {
+  -webkit-font-smoothing: antialiased;
 }
 
 .header-spacer {
@@ -92,8 +95,8 @@ textarea {
   background: $background-primary;
 }
 
-nav > .container {
-  background: $background-primary;
+ul.nav.navbar-nav {
+  background: linear-gradient(to bottom, $background-primary 0%, $background-primary 75%, rgba(255, 255, 255, 0.01) 100%);
 }
 
 

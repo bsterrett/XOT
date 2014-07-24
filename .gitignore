@@ -27,5 +27,5 @@ doc/
 .secret
 
 # Personal stuff
-db/lists.yml
-db/reminders.yml
+db/lists*yml
+db/reminders*yml
