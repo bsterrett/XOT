@@ -3,6 +3,8 @@ FactoryGirl.define do
     first_name "foo"
     last_name "bar"
     email "foo@bar.com"
+    password "reallybadpassword"
+    password_confirmation "reallybadpassword"
 
     factory :user_with_reminders do
       after(:create) do |user, evaluator|

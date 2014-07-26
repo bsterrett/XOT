@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-u = User.create(first_name: 'Ben', last_name: 'Sterrett', email: 'bs11868@gmail.com')
+u = User.create(first_name: 'Ben', last_name: 'Sterrett', email: 'bs11868@gmail.com', password: "password", password_confirmation: "password")
 
 r = u.reminders.create(title: "Please Remember", text: "Don't forget now", recurring: false, trigger_at: Time.now+300 )
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140719041812) do
+ActiveRecord::Schema.define(version: 20140726014622) do
 
   create_table "notifications", force: true do |t|
     t.integer  "reminder_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140719041812) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
   end
 
 end

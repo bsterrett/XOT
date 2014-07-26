@@ -25,3 +25,7 @@ end
 every 10.minutes do
   rake "clean:notifications"
 end
+
+every 30.minutes do
+  rake "schedule:notifications"
+end

@@ -11,7 +11,7 @@ $link-color:    $brand-primary;
 @import "compass";
 
 
-/* sass variables */
+/* sass variables and mixins */
 
 $primary-color-medium: #167041;
 $primary-color-light: #088A4B;
@@ -26,6 +26,12 @@ $background-secondary: #EAF2EB;
 
 $border-width: 150px;
 $container-width: 800px;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 
 /* universal */
@@ -73,6 +79,12 @@ html, input, textarea {
 
 .page-middle {
   padding-bottom: 50px;
+}
+
+.debug_dump {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 20px;
 }
 
 
