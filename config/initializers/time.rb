@@ -1,13 +1,10 @@
 class Time
   def past?
-    return ( Time.now <=> self ) == 1 ? true : false
+    # the constant approximates the time for arithemtic
+    return ( self.utc - Time.now.utc + 0.0002 < 0 )
   end
 
   def in_next_hour?
-    if (Time.now <=> self) == -1  and  (Time.now+3600 <=> self ) == 1
-      return true
-    else
-      return false
-    end
+    return ( self.utc - Time.now.utc > 0 && self.utc - Time.now.utc < 3600 )
   end
 end

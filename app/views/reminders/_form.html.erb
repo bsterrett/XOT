@@ -23,6 +23,10 @@
     <%= f.label :text %><br>
     <%= f.text_field :text, class: "form-control" %>
   </div>
+  <div class="form-group">
+    <%= f.label :recurrence_period %><br>
+    <%= f.number_field :recurrence_period, class: "form-control" %>
+  </div>
   <div class="checkbox">
     <%= f.label :recurring do %>
       <%= f.check_box :recurring %>

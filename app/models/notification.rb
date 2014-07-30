@@ -2,7 +2,7 @@ class Notification < ActiveRecord::Base
   belongs_to :reminder
 
   def user
-    return self.reminder.user
+    return self.reminder.nil? ? nil : self.reminder.user
   end
 
   def user_id

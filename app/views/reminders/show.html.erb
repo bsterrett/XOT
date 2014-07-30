@@ -11,7 +11,7 @@
 </p>
 
 <p>
-  <strong>Text content:</strong>
+  <strong>Text:</strong>
   <%= @reminder.text %>
 </p>
 
@@ -21,9 +21,15 @@
 </p>
 
 <p>
+  <strong>Recurrence Period:</strong>
+  <%= @reminder.recurrence_period %>
+</p>
+
+<p>
   <strong>Trigger at:</strong>
   <%= @reminder.trigger_at %>
 </p>
 
-<%= link_to 'Edit', edit_reminder_path(@reminder) %> |
-<%= link_to 'Back', reminders_path %>
+<%= link_to 'Back', reminders_path, class: "btn btn-default" %>
+<%= link_to 'Edit', edit_reminder_path(@reminder), class: "btn btn-primary" %>
+
