@@ -29,3 +29,4 @@ doc/
 # Personal stuff
 db/lists*yml
 db/reminders*yml
+db/card.txt
