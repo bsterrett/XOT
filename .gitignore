@@ -27,6 +27,4 @@ doc/
 .secret
 
 # Personal stuff
-db/lists*yml
-db/reminders*yml
-db/card.txt
+log/preimplementation_lists
