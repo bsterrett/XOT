@@ -1,6 +1,6 @@
 class Time
   def past?
-    # the constant approximates the time for arithemtic
+    # the constant approximates the time for arithmetic
     return ( self.utc - Time.now.utc + 0.0002 < 0 )
   end
 
