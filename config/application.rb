@@ -14,6 +14,8 @@ module Exotemporalis
 
     config.time_zone = 'Pacific Time (US & Canada)'
     config.i18n.default_locale = :en
-    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif) #for bootstrap
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.precompile += %w( .svg .eot .woff .ttf .otf ) # for fonts
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif) # for bootstrap
   end
 end

@@ -14,6 +14,11 @@ describe "UserPages" do
       it "should not create a user" do
         expect { click_button submit }.not_to change(User, :count)
       end
+
+      describe "after submission" do
+        before { click_button submit }
+        it { is_expected.to have_content('error') }
+      end
     end
 
     describe "with valid information" do
@@ -28,6 +33,11 @@ describe "UserPages" do
       it "should create a user" do
         expect { click_button submit }.to change(User, :count).by(1)
       end
+
+      describe "after submission" do
+        before { click_button submit }
+        it { is_expected.not_to have_content('error') }
+      end
     end
   end
 
@@ -35,7 +45,7 @@ describe "UserPages" do
     let(:user) { create(:user) }
     before { visit user_path(user) }
 
-    it { should have_content(user.first_name) }
-    it { should have_title(user.first_name) }
+    it { is_expected.to have_content(user.first_name) }
+    it { is_expected.to have_title(user.first_name) }
   end
 end
