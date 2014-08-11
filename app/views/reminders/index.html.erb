@@ -6,7 +6,6 @@
       <tr>
         <th>User</th>
         <th>Title</th>
-        <th>Text</th>
         <th>Recurring</th>
         <th>Period</th>
         <th>Trigger at</th>
@@ -18,10 +17,9 @@
         <tr>
           <td><%= link_to "#{reminder.user.name}", user_path(reminder.user) %></td>
           <td><%= reminder.title %></td>
-          <td><%= reminder.text %></td>
           <td><%= reminder.recurring %></td>
           <td><%= reminder.recurrence_period %></td>
-          <td><%= reminder.trigger_at %></td>
+          <td><%= reminder.trigger_at.to_formatted_s(:short)  %></td>
           <td><%= link_to 'Show', reminder %></td>
           <td><%= link_to 'Edit', edit_reminder_path(reminder) %></td>
           <td><%= link_to 'Destroy', reminder, method: :delete, data: { confirm: 'Are you sure?' } %></td>

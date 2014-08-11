@@ -3,6 +3,7 @@
 <head>
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Gudea' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= render 'layouts/html5shiv' %>
   <%= csrf_meta_tags %>
@@ -21,10 +22,6 @@
     </div>
     <div class="page-right-border"></div>  
   </div>
-  <script>
-    $(document).ready(function(){
-      resizeBorders();
-    });
-  </script>
+  <script>$(document).ready(function(){resizeBorders();});</script>
 </body>
 </html>

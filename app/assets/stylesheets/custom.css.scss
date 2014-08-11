@@ -22,7 +22,7 @@ $secondary-color-light: #E0F8E6;
 $secondary-color-dark: #E0F8E6;
 
 $background-primary: #FFFFFF;
-$background-secondary: #EAF2EB;
+$background-secondary: #B9BFBA; /*#EAF2EB;*/
 
 $border-width: 150px;
 $container-width: 800px;
@@ -35,21 +35,6 @@ $container-width: 800px;
 
 
 
-
-/* fonts */
-
-/*@font-face {
-  font-family: 'Trabajo';
-  src: url(font-path('Trabajo.otf')) format('oft');
-}*/
-
-/*@font-face {
-  font-family: 'Averia Serif';
-  src: font-url('AveriaSerif-Regular.ttf') format("truetype");
-}*/
-
-
-
 /* universal */
 
 html {
@@ -58,6 +43,7 @@ html {
 
 body {
   background: $background-secondary;
+  font-family: 'Gudea', 'Helvetica Neue', 'Helvetica', sans-serif;
 }
 
 section {
@@ -150,9 +136,29 @@ pre, #notice {
   background: $background-primary;
 }
 
-ul.nav.navbar-nav {
+.navbar-fixed-top > .container {
+  background: $background-primary; /* in case gradient fails */
   background: linear-gradient(to bottom, $background-primary 0%, $background-primary 75%, rgba(255, 255, 255, 0.01) 100%);
+  height: 60px;
 }
+
+.navbar.navbar-fixed-top {
+  margin-bottom: 0;
+}
+
+.navbar-fixed-top .nav > li {
+  font-size: 24px;
+  a {
+    color: #333;
+    font-weight: bold;
+    padding: 15px 15px 5px;
+  }
+  a:hover, a:focus {
+    text-decoration: none;
+    background-color: $background-primary;
+  }
+}
+
 
 
 
