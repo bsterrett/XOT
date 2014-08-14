@@ -46,6 +46,11 @@ body {
   font-family: 'Gudea', 'Helvetica Neue', 'Helvetica', sans-serif;
 }
 
+*::selection {
+  background: $brand-primary;
+  color: $background-primary;
+}
+
 section {
   overflow: auto;
 }
