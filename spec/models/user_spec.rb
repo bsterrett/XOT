@@ -19,6 +19,12 @@ describe User, :type => :model do
     it { is_expected.to respond_to(:authenticate) }
     it { is_expected.to respond_to(:remember_token) }
 
+    describe "remember token" do
+      before { @user.save }
+      it { expect(@user.remember_token).not_to be_blank }
+      it { expect(@user.remember_token).not_to be_nil }
+    end
+
     it 'cannot be saved after removing the first name' do
       @user.first_name = ''
       expect(@user).not_to be_valid

@@ -16,6 +16,9 @@
       <%= render 'layouts/header' %>
       <div class="header-spacer"></div>
       <div class="container">
+        <% flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, class: ['alert',name] %>
+        <% end -%>
         <%= yield %>
         <%= debug(params) if Rails.env.development? %>
       </div>  

@@ -8,6 +8,7 @@ def create
       sign_in user
       redirect_to user
     else
+      flash.now['alert-danger'] = 'Invalid email/password combination'
       render 'new'
     end
   end
