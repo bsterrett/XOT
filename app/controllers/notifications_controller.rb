@@ -28,7 +28,10 @@ class NotificationsController < ApplicationController
 
     respond_to do |format|
       if @notification.save
-        format.html { redirect_to @notification, notice: 'Notification was successfully created.' }
+        format.html do
+          redirect_to @notification
+          flash['alert-success'] = 'Notification was successfully created.'
+        end
         format.json { render :show, status: :created, location: @notification }
       else
         format.html { render :new }
@@ -42,7 +45,10 @@ class NotificationsController < ApplicationController
   def update
     respond_to do |format|
       if @notification.update(notification_params)
-        format.html { redirect_to @notification, notice: 'Notification was successfully updated.' }
+        format.html do
+          redirect_to @notification
+          flash['alert-success'] = 'Notification was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @notification }
       else
         format.html { render :edit }
@@ -56,7 +62,10 @@ class NotificationsController < ApplicationController
   def destroy
     @notification.destroy
     respond_to do |format|
-      format.html { redirect_to notifications_url, notice: 'Notification was successfully destroyed.' }
+      format.html do 
+        redirect_to notifications_url
+        flash['alert-success'] = 'Notification was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end

@@ -37,6 +37,8 @@ describe "UserPages" do
       describe "after submission" do
         before { click_button submit }
         it { is_expected.not_to have_content('error') }
+        it { should have_link('Sign out') }
+        it { should have_selector('div.alert.alert-success', text: 'Welcome') }
       end
     end
   end

@@ -39,6 +39,7 @@ describe User, :type => :model do
       @user.email = ''
       expect(@user).not_to be_valid
     end
+
     describe "when email format is invalid" do
       it "should be invalid" do
         addresses = %w[user@foo,com user_at_foo.org example.user@foo.
